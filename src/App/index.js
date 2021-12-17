@@ -22,6 +22,18 @@ function App() {
         <>
           <Routes>
             <Route 
+              path="/" 
+              element={<Form 
+                        title="Login" 
+                        otherTitle="or Register"
+                        changeOption={()=>navigate('/register')}
+                        setEmail={ setEmail }
+                        setPassword={ setPassword } 
+                        handleAction={ ()=>register_login(1,email,password,toast,navigate) }
+                      />}
+              
+            />
+            <Route 
               path="/login" 
               element={<Form 
                         title="Login" 

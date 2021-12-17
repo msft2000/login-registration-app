@@ -2,8 +2,9 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from './Button';
+import '../../css/Form.css';
 
-export default function BasicTextFields({ title, setEmail, setPassword, handleAction, otherTitle, changeOption }){
+export default function BasicTextFields({ title, setEmail, setPassword, handleAction, otherTitle, changeOption, googleLogin }){
     
     return(
         <div className='basic-text-fields'>
@@ -35,6 +36,16 @@ export default function BasicTextFields({ title, setEmail, setPassword, handleAc
             </Box>
             <Button tipe="contained" title={ title } handleAction={handleAction} />
             <Button tipe="secondary" title={ otherTitle } handleAction={changeOption} />
+            <div className="otros-metodos-container">
+                <p></p>
+                <h6>Or Login with</h6>
+                <p></p>
+            </div>
+            <div className="otros-metodos-icons-container">
+                <span onClick={googleLogin}className='icon-google'></span>
+                <span className='icon-facebook'></span>
+                <span className='icon-apple'></span>
+            </div>
         </div>
     );
 }

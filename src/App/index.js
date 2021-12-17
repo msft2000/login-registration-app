@@ -1,12 +1,12 @@
 import '../css/App.css';
 import React from 'react';
-import logo from '../assets/login.svg';
+// import logo from '../assets/login.svg';
 import Form from '../components/common/Form';
 import Home from '../components/Home';
 import { Routes,Route,useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import register_login from './fireBase-authentication';
+import {register_login,googleLogin} from './fireBase-authentication';
 function App() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -42,6 +42,7 @@ function App() {
                         setEmail={ setEmail }
                         setPassword={ setPassword } 
                         handleAction={ ()=>register_login(1,email,password,toast,navigate) }
+                        googleLogin={()=>googleLogin(toast,navigate)}
                       />}
               
             />
@@ -54,6 +55,7 @@ function App() {
                           setEmail={ setEmail }
                           setPassword={ setPassword }
                           handleAction={ ()=>register_login(2,email,password,toast,navigate) }
+                          googleLogin={()=>googleLogin(toast,navigate)}
                         />}
               
             />
@@ -66,7 +68,7 @@ function App() {
           </Routes>
         </>
         <ToastContainer />
-        <img className="App-logo" alt="Logo Spin" src={ logo } />
+        {/* <img className="App-logo" alt="Logo Spin" src={ logo } /> */}
       </div>
   );
 }

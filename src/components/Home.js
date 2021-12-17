@@ -1,5 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import '../css/Home.css';
 export default function Home(){
     const navigate=useNavigate();
     React.useEffect(()=>{
@@ -17,7 +20,9 @@ export default function Home(){
     return(
         <div id="home">
             <h1>Home Page</h1>
-            <button onClick={handleLogOut}>Log Out</button>
+            <Button onClick={handleLogOut} variant="outlined" startIcon={<DeleteIcon />}>
+                Log Out
+            </Button>
         </div>
     )
 }

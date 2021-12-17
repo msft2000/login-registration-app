@@ -1,0 +1,52 @@
+.basic-text-fields{
+    margin: 50px;
+    padding: 30px;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 8px 8px 5px -2px rgba(0,0,0,0.36);
+    -webkit-box-shadow: 8px 8px 5px -2px rgba(0,0,0,0.36);
+    -moz-box-shadow: 8px 8px 5px -2px rgba(0,0,0,0.36);
+}
+.heading-container{
+    display: flex;
+    justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    align-items: center;
+}
+.otros-metodos-container{
+    display: flex;
+    justify-content: center;
+}
+.otros-metodos-container p{
+    width: 30px;
+    height: 0.65em;
+    border-bottom: 1px solid rgba(232,99,27,1);
+}
+.otros-metodos-container h6{
+    color: rgba(232,99,27,1);
+    font-weight: 400;
+    margin: 20px 10px;
+}
+.otros-metodos-icons-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon-google{
+    content: url('../assets/google.svg');
+    width: 30px;
+    height: 30px;
+}
+.icon-facebook{
+    content: url('../assets/facebook.svg');
+    width: 30px;
+    height: 30px;
+}
+.icon-apple{
+    content: url('../assets/apple.svg');
+    width: 30px;
+    height: 30px;
+}

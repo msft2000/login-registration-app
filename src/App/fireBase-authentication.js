@@ -4,9 +4,15 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
-export default function register_login(id, email, password, toast, navigate) {
+export function register_login(id, email, password, toast, navigate) {
   const authentication = getAuth();
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({
+    'login_hint': 'user@example.com'
+  });
   if (id === 1) {
     signInWithEmailAndPassword(authentication, email, password)
       .then((response) => {
@@ -43,4 +49,21 @@ export default function register_login(id, email, password, toast, navigate) {
         }
       });
   }
+}
+export function googleLogin( toast, navigate) {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({
+    'login_hint': 'user@example.com'
+  });
+  const auth = getAuth();
+  signInWithPopup(auth, provider)
+    .then((response) => {
+      sessionStorage.setItem(
+        "Auth Token",
+        response._tokenResponse.refreshToken
+      );
+      navigate('/home');
+    }).catch((error) => {
+      toast.error(error);
+    });
 }
